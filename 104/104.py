@@ -8,6 +8,8 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: TreeNode):
+        if root == None:
+            return 0
         if root.left == None and root.right == None:
             return 1
         if root.left == None:
