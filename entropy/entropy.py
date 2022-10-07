@@ -22,7 +22,6 @@ class Solution:
             prop = dict[key] / len(input)
             if prop == 1:
                 return 0
-            print(prop)
             # print(prop * math.log(2, prop))
             entropy += - prop * math.log(prop, 2)
         
@@ -33,3 +32,5 @@ if __name__ == "__main__":
     ans = s.calculateEntropy([1,2,3,4,5,6])
     
     print(ans)
+    print(s.calculateEntropy([1, 2, 6, 7, 9, 10]))
+    print(s.calculateEntropy([1,2,3,4,5,6,7,8,9,10]))
