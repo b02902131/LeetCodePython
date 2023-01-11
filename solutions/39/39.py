@@ -2,10 +2,25 @@ from typing import List
 
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        self.ans = []
-        candidates.sort()
-        self.combinationSumHelper(candidates, target, [])
-        return self.ans
+        res = []
+        def backtrack(start, target, path):
+            if target < 0:
+                return
+            if target == 0:
+                res.append(path)
+                return
+            for i in range(start, len(candidates)):
+                backtrack(i, target - candidates[i], path + [candidates[i]])
+
+        backtrack(0, target, [])
+        return res
+
+
+        
+        # self.ans = []
+        # candidates.sort()
+        # self.combinationSumHelper(candidates, target, [])
+        # return self.ans
 
     def combinationSumHelper(self, candidates: List[int], target: int, arr: List[int]) -> List[List[int]]:
         
