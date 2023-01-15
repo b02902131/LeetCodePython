@@ -6,7 +6,6 @@ class Solution:
             if len(result) == 0 or interval[0] > result[-1][1]:
                 result.append(interval)
             else:
-                result[-1] = [result[-1][0], max(result[-1][1], interval[1])]
+                # result[-1] = [result[-1][0], max(result[-1][1], interval[1])]
+                result[-1][1] = max(result[-1][1], interval[1]) # 比上一行簡潔
         return result
-
-        
